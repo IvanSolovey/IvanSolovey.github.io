@@ -8,3 +8,7 @@ vendor/
 .ruby-version
 .DS_Store
 .claude/
+HOWTO.md
+CLAUDE.md
+design-brief.md
+PLAN.md
