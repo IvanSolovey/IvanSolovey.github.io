@@ -1,0 +1,58 @@
+title: Соловей
+description: Про AI, менеджмент і особисту ефективність
+url: "https://ivansolovey.github.io"
+baseurl: ""
+lang: uk
+
+author:
+  name: Іван Соловйов
+
+# --- Plugins ---
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# --- Pagination ---
+paginate: 10
+paginate_path: "/page:num/"
+
+# --- Permalinks ---
+permalink: /:year/:month/:slug/
+
+# --- Collections ---
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# --- Defaults ---
+defaults:
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: page
+
+# --- Giscus comments ---
+# Fill in after setting up at https://giscus.app
+giscus:
+  repo: ""          # e.g. "ivansolovey/ivansolovey.github.io"
+  repo_id: ""
+  category: "Comments"
+  category_id: ""
+
+# --- Exclude from build ---
+exclude:
+  - PLAN.md
+  - design-brief.md
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - README.md

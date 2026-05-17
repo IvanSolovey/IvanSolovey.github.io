@@ -1,0 +1,23 @@
+author: Іван Соловйов
+handle: aisolovey
+
+# Short bio — used in sidebar
+bio_short: "IT-спеціаліст, технічний партнер у компанії лідогенерації. Будую системи і пояснюю іншим, як ними користуватися."
+bio_line2: "Тут пишу про те, що перевірив на собі."
+
+# Social links — leave empty to hide
+social:
+  linkedin: ""   # e.g. "https://linkedin.com/in/yourname"
+  threads: ""    # e.g. "https://threads.net/@yourhandle"
+  email: ""      # e.g. "you@example.com"
+
+# Tag list — controls sidebar tag cloud and tags page order
+tags:
+  - ai
+  - менеджмент
+  - ефективність
+  - процеси
+  - промпти
+  - інструменти
+  - бізнес
+  - команди

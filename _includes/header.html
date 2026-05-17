@@ -1,0 +1,16 @@
+<header>
+  <div class="wrap masthead">
+    <div class="brand">
+      <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      <div class="descriptor">{{ site.description }}</div>
+    </div>
+    <div class="header-tools">
+      <nav class="topnav">
+        {% for item in site.data.nav %}
+          <a href="{{ item.url | relative_url }}"{% if page.nav_key == item.key %} class="active"{% endif %}>{{ item.title }}</a>
+        {% endfor %}
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Перемкнути тему">тема: авто</button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+{% assign months_uk = "Січня,Лютого,Березня,Квітня,Травня,Червня,Липня,Серпня,Вересня,Жовтня,Листопада,Грудня" | split: "," %}
+{% assign month_index = page.date | date: "%-m" | minus: 1 %}
+{% assign read_mins = content | number_of_words | divided_by: 200.0 | ceil %}
+
+<div class="article-wrap">
+  <div class="breadcrumb"><a href="{{ '/' | relative_url }}">← усі записи</a></div>
+
+  <article>
+    <div class="post-meta">
+      {{ page.date | date: "%-d" }} {{ months_uk[month_index] }} {{ page.date | date: "%Y" }} · {{ read_mins }} хв читання
+    </div>
+
+    <h1 class="title">{{ page.title }}</h1>
+
+    {% if page.standfirst %}
+      <p class="standfirst">{{ page.standfirst }}</p>
+    {% endif %}
+
+    {{ content }}
+
+    {% if page.artifact %}
+      {% include artifact.html %}
+    {% endif %}
+
+    <div class="article-tags">
+      {% for tag in page.tags %}
+        <a href="{{ '/tags/' | relative_url }}#{{ tag }}" class="tag">{{ tag }}</a>
+      {% endfor %}
+    </div>
+
+    <div class="post-nav">
+      {% if page.previous %}
+        <a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>
+      {% else %}
+        <span></span>
+      {% endif %}
+      {% if page.next %}
+        <a href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>
+      {% else %}
+        <span></span>
+      {% endif %}
+    </div>
+  </article>
+</div>
+
+{% include giscus.html %}

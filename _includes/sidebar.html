@@ -1,0 +1,34 @@
+<div class="side-block about">
+  <h3>Про автора</h3>
+  <p>{{ site.data.site.bio_short }}</p>
+  <p>{{ site.data.site.bio_line2 }}</p>
+  <div class="links">
+    {% if site.data.site.social.linkedin != "" %}
+      <a href="{{ site.data.site.social.linkedin }}">LinkedIn</a>
+    {% endif %}
+    {% if site.data.site.social.threads != "" %}
+      <a href="{{ site.data.site.social.threads }}">Threads</a>
+    {% endif %}
+    {% if site.data.site.social.email != "" %}
+      <a href="mailto:{{ site.data.site.social.email }}">пошта</a>
+    {% endif %}
+  </div>
+</div>
+
+<div class="side-block">
+  <h3>Теги</h3>
+  <div class="tag-cloud">
+    {% for tag in site.data.site.tags %}
+      <a href="{{ '/tags/' | relative_url }}#{{ tag }}" class="tag">{{ tag }}</a>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="side-block subscribe">
+  <h3>Підписка</h3>
+  <p>Новий запис на пошту. Без спаму, тільки коли є що сказати.</p>
+  <form onsubmit="return false;">
+    <input type="email" placeholder="твоя пошта" aria-label="Електронна пошта">
+    <button type="submit">Підписатися</button>
+  </form>
+</div>

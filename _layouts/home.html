@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="wrap">
+  <div class="grid">
+
+    <main class="posts">
+      {% if site.data.now.content %}
+      <div class="now-note">
+        <span class="now-label">зараз</span>
+        <p>{{ site.data.now.content }}</p>
+      </div>
+      {% endif %}
+
+      <div class="section-label">Останні записи</div>
+
+      {% for post in paginator.posts %}
+        {% include post-card.html post=post lead=forloop.first %}
+      {% endfor %}
+
+      {% if paginator.total_pages > 1 %}
+      <div class="pagination">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | relative_url }}">← новіші</a>
+        {% endif %}
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | relative_url }}">старіші →</a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </main>
+
+    <aside>
+      {% include sidebar.html %}
+    </aside>
+
+  </div>
+</div>

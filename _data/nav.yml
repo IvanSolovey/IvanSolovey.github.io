@@ -1,0 +1,11 @@
+- title: Архів
+  url: /archive/
+  key: archive
+
+- title: Теги
+  url: /tags/
+  key: tags
+
+- title: Про автора
+  url: /about/
+  key: about

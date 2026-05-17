@@ -1,0 +1,13 @@
+{% assign p = include.post %}
+<article class="post-item{% if include.lead %} lead{% endif %}{% if p.type == 'замітка' %} note{% endif %}">
+  <div class="post-type">{{ p.type }}</div>
+  <h2><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h2>
+  {% if p.excerpt and p.type != 'замітка' %}
+    <p class="excerpt">{{ p.excerpt | strip_html }}</p>
+  {% endif %}
+  <div class="tag-row">
+    {% for tag in p.tags %}
+      <a href="{{ '/tags/' | relative_url }}#{{ tag }}" class="tag">{{ tag }}</a>
+    {% endfor %}
+  </div>
+</article>
