@@ -6,15 +6,9 @@
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 {% seo %}
 {% if page.layout == 'post' %}
-  {% assign _t = page.title | url_encode | replace: "+", "%20" %}
-  {% if page.tags.size > 0 %}
-    {% assign _tag = page.tags | first | upcase | url_encode | replace: "+", "%20" %}
-    {% assign _og_image = "https://res.cloudinary.com/dc0qcq97c/image/upload/l_text:IBMPlexSans-VariableFont_wdth_wght_crtcpv.ttf_bold_20,co_rgb:1A3D7C,g_north_west,x_60,y_200:%23%20" | append: _tag | append: "/l_text:IBMPlexSans-VariableFont_wdth_wght_crtcpv.ttf_bold_62,co_rgb:1A1A1A,w_1080,c_fit,g_north_west,x_60,y_238:" | append: _t | append: "/og-base_kwrrko" %}
-  {% else %}
-    {% assign _og_image = "https://res.cloudinary.com/dc0qcq97c/image/upload/l_text:IBMPlexSans-VariableFont_wdth_wght_crtcpv.ttf_bold_62,co_rgb:1A1A1A,w_1080,c_fit,g_north_west,x_60,y_238:" | append: _t | append: "/og-base_kwrrko" %}
-  {% endif %}
+  {% assign _og_image = site.url | append: "/assets/og/" | append: page.slug | append: ".png" %}
 {% else %}
-  {% assign _og_image = "https://res.cloudinary.com/dc0qcq97c/image/upload/og-base_kwrrko" %}
+  {% assign _og_image = site.url | append: "/assets/og/og-static.png" %}
 {% endif %}
 <meta property="og:image" content="{{ _og_image }}">
 <meta name="twitter:image" content="{{ _og_image }}">

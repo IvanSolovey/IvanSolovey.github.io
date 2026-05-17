@@ -1,0 +1,15 @@
+{
+  "name": "ivansolovey-blog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "og": "node scripts/generate-og.js"
+  },
+  "dependencies": {
+    "@fontsource/unbounded": "^4.5.1",
+    "@ibm/plex": "^6.4.1",
+    "@resvg/resvg-js": "^2.6.0",
+    "gray-matter": "^4.0.3",
+    "satori": "^0.12.0"
+  }
+}

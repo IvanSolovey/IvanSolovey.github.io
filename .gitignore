@@ -8,7 +8,9 @@ vendor/
 .ruby-version
 .DS_Store
 .claude/
+node_modules/
 HOWTO.md
 CLAUDE.md
 design-brief.md
 PLAN.md
+scripts/fonts/
