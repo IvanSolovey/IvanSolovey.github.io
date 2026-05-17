@@ -7,8 +7,8 @@ bio_line2: "Тут пишу про те, що перевірив на собі."
 
 # Social links — leave empty to hide
 social:
-  linkedin: ""   # e.g. "https://linkedin.com/in/yourname"
-  threads: ""    # e.g. "https://threads.net/@yourhandle"
+  linkedin: "https://www.linkedin.com/in/soloviov-ivan/"
+  threads: "https://www.threads.com/@aisolovey"
   email: ""      # e.g. "you@example.com"
 
 # Tag list — controls sidebar tag cloud and tags page order
