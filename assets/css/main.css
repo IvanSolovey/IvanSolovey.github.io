@@ -516,6 +516,13 @@ th {
 }
 tr:last-child td { border-bottom: none; }
 
+/* Horizontal rule */
+hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 40px 0;
+}
+
 /* Figure / image */
 figure { margin: 32px 0; }
 figure img {

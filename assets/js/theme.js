@@ -14,6 +14,13 @@
     if (btn) {
       btn.textContent = 'тема: ' + (mode === 'dark' ? 'темна' : 'світла');
     }
+    var giscusFrame = document.querySelector('iframe.giscus-frame');
+    if (giscusFrame) {
+      giscusFrame.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: window.location.origin + '/assets/css/giscus-' + mode + '.css' } } },
+        'https://giscus.app'
+      );
+    }
   }
   apply(current);
 

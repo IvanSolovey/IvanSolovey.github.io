@@ -1,0 +1,43 @@
+/* Соловей — Giscus dark theme */
+:root {
+  --color-canvas-default: #161616;
+  --color-canvas-overlay: #1f1f1f;
+  --color-canvas-inset: #1f1f1f;
+  --color-canvas-subtle: #1f1f1f;
+
+  --color-border-default: #2e2e2e;
+  --color-border-muted: #2e2e2e;
+  --color-border-subtle: rgba(240, 240, 240, 0.1);
+
+  --color-fg-default: #e8e8e8;
+  --color-fg-muted: #9a9a9a;
+  --color-fg-subtle: #6b6b6b;
+  --color-fg-on-emphasis: #161616;
+
+  --color-accent-fg: #7fa8dc;
+  --color-accent-emphasis: #7fa8dc;
+  --color-accent-muted: rgba(127, 168, 220, 0.2);
+  --color-accent-subtle: rgba(127, 168, 220, 0.08);
+
+  --color-btn-bg: #1f1f1f;
+  --color-btn-border: #2e2e2e;
+  --color-btn-hover-bg: #2a2a2a;
+  --color-btn-hover-border: #3a3a3a;
+  --color-btn-text: #e8e8e8;
+  --color-btn-primary-bg: #7fa8dc;
+  --color-btn-primary-border: #7fa8dc;
+  --color-btn-primary-text: #161616;
+  --color-btn-primary-hover-bg: #6a94cc;
+  --color-btn-primary-hover-border: #6a94cc;
+
+  --color-neutral-muted: rgba(240, 240, 240, 0.08);
+  --color-neutral-emphasis-plus: #e8e8e8;
+  --color-neutral-emphasis: #9a9a9a;
+
+  --color-social-reaction-bg-reacted: rgba(127, 168, 220, 0.08);
+  --color-social-reaction-bg-hover: rgba(127, 168, 220, 0.08);
+
+  --color-input-bg: #1f1f1f;
+  --color-input-border: #2e2e2e;
+  --color-input-contrast: #161616;
+}

@@ -1,19 +1,30 @@
 {% if site.giscus.repo != "" %}
 <div class="article-wrap">
-  <script src="https://giscus.app/client.js"
-    data-repo="{{ site.giscus.repo }}"
-    data-repo-id="{{ site.giscus.repo_id }}"
-    data-category="{{ site.giscus.category }}"
-    data-category-id="{{ site.giscus.category_id }}"
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="preferred_color_scheme"
-    data-lang="uk"
-    crossorigin="anonymous"
-    async>
+  <div id="giscus-container"></div>
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme-mode');
+      var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var base = window.location.origin;
+      var theme = base + '/assets/css/giscus-' + (dark ? 'dark' : 'light') + '.css';
+
+      var s = document.createElement('script');
+      s.src = 'https://giscus.app/client.js';
+      s.setAttribute('data-repo', '{{ site.giscus.repo }}');
+      s.setAttribute('data-repo-id', '{{ site.giscus.repo_id }}');
+      s.setAttribute('data-category', '{{ site.giscus.category }}');
+      s.setAttribute('data-category-id', '{{ site.giscus.category_id }}');
+      s.setAttribute('data-mapping', 'pathname');
+      s.setAttribute('data-strict', '0');
+      s.setAttribute('data-reactions-enabled', '1');
+      s.setAttribute('data-emit-metadata', '0');
+      s.setAttribute('data-input-position', 'top');
+      s.setAttribute('data-theme', theme);
+      s.setAttribute('data-lang', 'uk');
+      s.setAttribute('crossorigin', 'anonymous');
+      s.async = true;
+      document.getElementById('giscus-container').appendChild(s);
+    })();
   </script>
 </div>
 {% endif %}
