@@ -27,8 +27,14 @@
 <div class="side-block subscribe">
   <h3>Підписка</h3>
   <p>Новий запис на пошту. Без спаму, тільки коли є що сказати.</p>
-  <form onsubmit="return false;">
-    <input type="email" placeholder="твоя пошта" aria-label="Електронна пошта">
+  <form
+    action="https://buttondown.email/api/emails/"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://buttondown.email/soloviov', 'popupwindow')"
+  >
+    <input type="email" name="email" placeholder="твоя пошта" aria-label="Електронна пошта" required>
+    <input type="hidden" value="1" name="embed">
     <button type="submit">Підписатися</button>
   </form>
 </div>
