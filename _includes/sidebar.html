@@ -27,14 +27,47 @@
 <div class="side-block subscribe">
   <h3>Підписка</h3>
   <p>Новий запис на пошту. Без спаму, тільки коли є що сказати.</p>
-  <form
-    action="https://buttondown.email/api/emails/embed-subscribe/soloviov"
-    method="post"
-    target="popupwindow"
-    onsubmit="window.open('https://buttondown.email/soloviov', 'popupwindow')"
-  >
+  <form id="subscribe-form">
     <input type="email" name="email" placeholder="твоя пошта" aria-label="Електронна пошта" required>
-    <input type="hidden" value="1" name="embed">
     <button type="submit">Підписатися</button>
+    <p class="subscribe-msg" aria-live="polite"></p>
   </form>
+  <script>
+    (function () {
+      var form = document.getElementById('subscribe-form');
+      var msg  = form.querySelector('.subscribe-msg');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = form.querySelector('[name="email"]').value;
+        var btn   = form.querySelector('button');
+        btn.disabled = true;
+        msg.textContent = '';
+        var data = new FormData();
+        data.append('email', email);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://solovey.osd24.com/api/subscribe.php');
+        xhr.onload = function () {
+          btn.disabled = false;
+          try {
+            var res = JSON.parse(xhr.responseText);
+            if (res.ok) {
+              form.querySelector('[name="email"]').value = '';
+              msg.textContent = res.msg === 'already'
+                ? 'Цей email вже підписаний.'
+                : 'Перевірте пошту — надіслали підтвердження.';
+            } else {
+              msg.textContent = res.error || 'Помилка. Спробуйте ще раз.';
+            }
+          } catch (err) {
+            msg.textContent = 'Помилка. Спробуйте ще раз.';
+          }
+        };
+        xhr.onerror = function () {
+          btn.disabled = false;
+          msg.textContent = 'Помилка зʼєднання. Спробуйте ще раз.';
+        };
+        xhr.send(data);
+      });
+    })();
+  </script>
 </div>
